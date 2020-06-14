@@ -20,12 +20,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-
 @RunWith(AndroidJUnit4.class)
 @SmallTest
 public class ExampleInstrumentedTest {
