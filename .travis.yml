@@ -24,6 +24,9 @@ android:
     - sys-img-x86-android-26
     - sys-img-armeabi-v7a-android-29
 
+    licenses:
+      - 'android-sdk-license-.+'
+
 env:
   global:
     # install timeout in minutes (2 minutes by default)
