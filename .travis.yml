@@ -28,9 +28,9 @@ android:
     # System images
     - sys-img-$ANDROID_ABI-addon-google_apis-google-$ANDROID_API_LEVEL
 
-    # Licenses
-    licenses:
-      - 'android-sdk-license-.+'
+#    # Licenses
+#    licenses:
+#      - 'android-sdk-license-.+'
 
 # Emulator Management: Create, Start and Wait
 before_script:
