@@ -48,5 +48,6 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
+  - travis_wait $ADB_INSTALL_TIMEOUT sleep 1800 &
   - android list target
   - ./gradlew connectedAndroidTest
