@@ -8,6 +8,7 @@ env:
     - ANDROID_BUILD_TOOLS_VERSION=25.0.3
     - ANDROID_ABI=google_apis/armeabi-v7a
     - ANDROID_TAG=google_apis
+    - ADB_INSTALL_TIMEOUT=5
 
 android:
   components:
@@ -42,4 +43,5 @@ before_script:
 
 script:
   - android list target
-  - ./gradlew connectedAndroidTest
+#  - ./gradlew connectedAndroidTest
+  - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
