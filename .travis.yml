@@ -36,18 +36,17 @@ android:
 before_install:
   - chmod +x gradlew
 
-install:
-  travis_wait $ADB_INSTALL_TIMEOUT mvn install
+#install:
+#  travis_wait $ADB_INSTALL_TIMEOUT mvn install
 
 # Emulator Management: Create, Start and Wait
 before_script:
   - echo no | android create avd --force -n test -t "android-$ANDROID_API_LEVEL" --abi $ANDROID_ABI #--tag $ANDROID_TAG
-#  - emulator -avd test -no-skin -no-audio -no-window &
-  - emulator -avd test -no-skin -no-audio -no-window -verbose -debug init &
+  - emulator -avd test -no-skin -no-audio -no-window -gpu off & # init &
   - android-wait-for-emulator
+  - adb devices
   - adb shell input keyevent 82 &
 
 script:
   - android list target
-#  - ./gradlew connectedAndroidTest
-  - ./gradlew clean testReleaseUnitTest # assembleRelease publishApkRelease
+  - ./gradlew connectedAndroidTest
